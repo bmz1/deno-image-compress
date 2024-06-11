@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^16.1.0",
+    "imagemagick_deno": "https://deno.land/x/imagemagick_deno@0.0.26/mod.ts"
+  }
+}
