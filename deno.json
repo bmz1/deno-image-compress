@@ -1,9 +1,15 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "dev": "deno run --watch --allow-net main.ts"
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^16.1.0",
     "imagemagick_deno": "https://deno.land/x/imagemagick_deno@0.0.26/mod.ts"
+  },
+  "deploy": {
+    "project": "0fa0822f-ea02-424d-b2f9-173cd03258c8",
+    "exclude": [],
+    "include": [],
+    "entrypoint": "main.ts"
   }
 }

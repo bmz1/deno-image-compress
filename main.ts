@@ -25,7 +25,7 @@ router.get("/", async (ctx) => {
   }
   const modifiedImage = await modifyImage(remoteImage.buffer);
   ctx.response.body = modifiedImage;
-  ctx.response.headers.set("Content-Type", remoteImage.mediaType);
+  ctx.response.headers.set("Content-Type", 'image/webp');
 });
 
 function modifyImage(
@@ -33,6 +33,7 @@ function modifyImage(
 ) {
   return new Promise<Uint8Array>((resolve) => {
     ImageMagick.read(imageBuffer, (image) => {
+      console.log(image.width, image.height);
       image.quality = 80;
       image.write(MagickFormat.Webp, (data) => resolve(data));
     });
